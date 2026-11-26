@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Brief</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px 30px;
+            background-color: #222;
+            color: white;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            word-spacing: 8px;
+        }
+        .header p {
+            margin: 0;
+            max-width: 300px;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+        .header nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .header nav a:hover {
+            color: #ff4444;
+        }
+        main {
+            width: 100%;
+            padding: 10px;
+        }
+        .game-link {
+            display: block;
+            width: 90%;
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .game-link:hover {
+            background-color: #f0f0f0;
+        }
+
+        .game h2 {
+            font-size: clamp(20px, 3vw, 32px);
+            line-height: 1.3;
+            margin-top: 0;
+        }
+        .game p {
+            font-size: clamp(14px, 1.5vw, 18px);
+            line-height: 1.7;
+        }
+        .game img {
+            display: block;
+
+            width: 100%;
+            max-width: 100%;
+
+            height: auto;
+
+            border-radius: 8px;
+        }
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+            .header h1 {
+                font-size: 23px;
+            }
+            .header p {
+                max-width: 100%;
+            }
+            .header nav {
+                justify-content: center;
+                gap: 15px;
+            }
+            .header nav a {
+                font-size: 14px;
+            }
+            .game-link {
+                width: 100%;
+                margin: 15px auto;
+                padding: 12px;
+                width: 95%;
+            }
+            .game h2 {
+                font-size: 21px;
+            }
+        }
+        .game-link:hover,
+.technology-link:hover,
+.science-link:hover,
+.business-link:hover {
+    background-color: #f0f0f0;
+}
+        @media (min-width: 601px) and (max-width: 900px) {
+            .header {
+                justify-content: center;
+                text-align: center;
+            }
+            
+        }
+        .technology-link {
+            display: block;
+            width: 90%;
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .science-link {
+            display: block;
+            width: 90%;
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .business-link {
+            display: block;
+            width: 90%;
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+.subscribe {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.subscribe h2 {
+    text-align: center;
+}
+
+.subscribe form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.subscribe input {
+    padding: 12px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.subscribe button {
+    padding: 12px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.subscribe button:hover {
+    background-color: #444;
+}
+
+.latest-news {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.latest-news h2 {
+    text-align: center;
+}
+
+.latest-news table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.latest-news th,
+.latest-news td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+
+.latest-news th {
+    background-color: #222;
+    color: white;
+}
+
+.latest-news tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>THE DAILY BRIEF</h1>
+        <p>Welcome to The Daily Brief, your go-to source
+            for the latest news and updates.</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="technology.html">Technology</a>
+            <a href="science.html">Science</a>
+            <a href="business.html">Business</a>
+            <a href="games.html">Games</a>
+        </nav>
+    </header>
+    <main>
+        <a href="games.html" class="game-link">
+            <div class="game">
+                <article>
+                    <h2>Indian Don't need to play GTA 6,
+                        we live it everyday</h2>
+                    <p>The world is going gaga over Grand Theft Auto 6,
+                        aka GTA 6. Millions of video gamers are spending
+                        sleepless nights in Vice City to relish chaos
+                        and thrills. But to play GTA 6 in India,
+                        Indians don't need PlayStation or Xbox.
+                        They just need to step out of their homes.</p>
+                    <p>Published on 21 November 2026</p>
+                    <img src="images/gta.avif" alt="GTA 6">
+                    <p><strong>Read Full Story →</strong></p>
+                </article>
+            </div>
+        </a>
+    <!---TECHNOLOGY---->
+        <a href="technology.html" class="technology-link">
+            <div class="technology">
+                <article>
+                    <h2>Google built a giant fake internet called Mirror Dimension to safely test its AI agents</h2>
+                    <p>Google has built a giant fake internet called the Mirror Dimension to safely train Chrome's AI browsing agents and defend them against hidden cyberattacks without putting real user data at risk.</p>
+                    <p>Published on 15 October 2026</p>
+                    <p><strong>Read Full Story →</strong></p>
+                </article>
+            </div>
+        </a>
+    <!---SCIENCE---->
+        <a href="science.html" class="science-link">
+            <div class="science">
+                <article>
+                    <h2>Earth's messenger reaches Mercury: BepiColombo captured by planet's gravity</h2>
+                    <p>BepiColombo has achieved orbital capture around Mercury after its journey through the inner Solar System. The milestone clears the way for two orbiters to begin complementary scientific investigations.</p>
+                    <p>Published on 10 September 2026</p>
+                    <p><strong>Read Full Story →</strong></p>
+                </article>
+            </div>
+        </a>
+    <!---BUSINESS---->
+        <a href="business.html" class="business-link">
+            <div class="business">
+                <article>
+                    <h2>How Mahesh Gupta, an Indian Oil engineer, turned purifier for family into Kent RO</h2>
+                    <p>At the India Today Masterclass, Kent RO Systems chairman Mahesh Gupta recalled building a water purifier after both his children got jaundice. When relatives began asking for one, he saw a business in a problem he had set out to solve for his family.</p>
+                    <p>Published on 5 August 2026</p>
+                    <p><strong>Read Full Story →</strong></p>
+                </article>
+            </div>
+        </a>
+    </main>
+<section class="latest-news">
+    <h2>Latest News Updates</h2>
+    <table>
+        <tr>
+            <th scope="col">Category</th>
+            <th>News</th>
+            <th>Published Date</th>
+        </tr>
+        <tr>
+            <td scope="col">Technology</td>
+            <td>Google's Mirror Dimension</td>
+            <td>15 October 2026</td>
+        </tr>
+        <tr>
+            <td scope="col">Science</td>
+            <td>BepiColombo reaches Mercury</td>
+            <td>10 September 2026</td>
+        </tr>
+        <tr>
+            <td scope="col">Business</td>
+            <td>Story behind Kent RO</td>
+            <td>5 August 2026</td>
+        </tr>
+        <tr>
+            <td scope="col">Games</td>
+            <td>GTA 6 news</td>
+            <td>21 November 2026</td>
+        </tr>
+    </table>
+</section>
+<section class="subscribe">
+    <h2>Subscribe to The Daily Brief</h2>
+    <p>Get the latest news and updates directly in your inbox.</p>
+    <form>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name"
+               placeholder="Enter your name" required>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email"
+               placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</section>
+    <footer>
+        <p>&copy; 2026 The Daily Brief. All rights reserved.</p>
+    </footer>
+</body>
+</html>
